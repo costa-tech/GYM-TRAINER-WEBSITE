@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -13,6 +14,11 @@ const Navbar = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // Close mobile menu when location changes
+  useEffect(() => {
+    setIsOpen(false);
+  }, [location]);
 
   return (
     <nav className={`fixed w-full z-50 transition duration-300 ${isScrolled ? 'bg-black py-4' : 'bg-transparent py-6'}`}>
@@ -65,11 +71,11 @@ const Navbar = () => {
             animate={{ opacity: 1, y: 0 }}
             className="md:hidden mt-6 py-6 border-t border-gray-800"
           >
-            <MobileNavLink to="/#services" onClick={() => setIsOpen(false)}>Programs</MobileNavLink>
-            <MobileNavLink to="/#team" onClick={() => setIsOpen(false)}>Trainers</MobileNavLink>
-            <MobileNavLink to="/online-coaching" onClick={() => setIsOpen(false)}>Online Coaching</MobileNavLink>
-            <MobileNavLink to="/#reviews" onClick={() => setIsOpen(false)}>Reviews</MobileNavLink>
-            <MobileNavLink to="/#contact" onClick={() => setIsOpen(false)}>Join Now</MobileNavLink>
+            <MobileNavLink to="/#services">Programs</MobileNavLink>
+            <MobileNavLink to="/#team">Trainers</MobileNavLink>
+            <MobileNavLink to="/online-coaching">Online Coaching</MobileNavLink>
+            <MobileNavLink to="/#reviews">Reviews</MobileNavLink>
+            <MobileNavLink to="/#contact">Join Now</MobileNavLink>
           </motion.div>
         )}
       </div>
@@ -77,6 +83,7 @@ const Navbar = () => {
   );
 };
 
+// NavLink component that works with both regular routes and hash routes
 const NavLink = ({ to, children }) => (
   <Link
     to={to}
@@ -86,10 +93,10 @@ const NavLink = ({ to, children }) => (
   </Link>
 );
 
-const MobileNavLink = ({ to, onClick, children }) => (
+// MobileNavLink component
+const MobileNavLink = ({ to, children }) => (
   <Link
     to={to}
-    onClick={onClick}
     className="block py-3 text-gray-300 hover:text-white font-semibold uppercase tracking-wider transition duration-300"
   >
     {children}
