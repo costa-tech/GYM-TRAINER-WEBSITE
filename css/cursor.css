@@ -1,0 +1,63 @@
+.cursor {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: rgba(255, 140, 0, 0.2);
+  pointer-events: none;
+  mix-blend-mode: difference;
+  transform: translate(-50%, -50%);
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), 
+              width 0.2s cubic-bezier(0.16, 1, 0.3, 1), 
+              height 0.2s cubic-bezier(0.16, 1, 0.3, 1), 
+              background-color 0.2s ease;
+  z-index: 9999;
+  backdrop-filter: blur(1px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 15px rgba(255, 140, 0, 0.3), 
+              inset 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.cursor::after {
+  content: '';
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 140, 0, 0.3);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.5;
+  z-index: -1;
+  animation: pulse-ring 1.5s linear infinite;
+}
+
+@keyframes pulse-ring {
+  0% {
+    width: 20px;
+    height: 20px;
+    opacity: 0.6;
+  }
+  100% {
+    width: 50px;
+    height: 50px;
+    opacity: 0;
+  }
+}
+
+.cursor-active {
+  transform: translate(-50%, -50%) scale(1.5);
+  background-color: rgba(255, 140, 0, 0.5);
+  width: 30px;
+  height: 30px;
+  box-shadow: 0 0 20px rgba(255, 140, 0, 0.5),
+              inset 0 0 15px rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(3px);
+}
+
+@media (max-width: 768px) {
+  .cursor {
+    display: none;
+  }
+}
