@@ -168,7 +168,7 @@ const OnlineCoaching = () => {
               whileTap={{ scale: 0.95 }}
             >
               <a 
-                href="#contact" 
+                href="https://forms.gle/gDVEkGDr2ZNbAaGJ8" 
                 className="btn btn-primary inline-block px-12 py-5 text-lg font-bold uppercase tracking-wider"
               >
                 Start Your Journey Now

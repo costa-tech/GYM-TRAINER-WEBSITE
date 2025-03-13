@@ -29,13 +29,15 @@ const Footer = () => {
           </div>
           <div>
             <h4 className="text-xl font-bold uppercase tracking-wider mb-6">Contact</h4>
-            <p className="text-gray-400">
-              123 Fitness Street<br />
-              New York, NY 10001
-            </p>
             <p className="text-white mt-4">
-              +1 (555) 123-4567<br />
-              info@fitfuture.com
+              +94 (71) 228-1369 - Costa<br />
+              +94 (76) 697-8929 - Achintha<br />
+              <a 
+                href="mailto:himsaradecosta@gmail.com" 
+                className="hover:text-red-600 transition duration-300 animated-link"
+              >
+                himsaradecosta@gmail.com
+              </a>
             </p>
           </div>
         </div>

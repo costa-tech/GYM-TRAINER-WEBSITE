@@ -3,13 +3,13 @@ import { motion } from 'framer-motion';
 
 const teamMembers = [
   {
-    name: "Alex 'The Beast' Johnson",
-    role: "Head Boxing Coach",
+    name: "Himsara De Costa",
+    role: "Personal Trainer",
     image: "https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    description: "Former professional boxer with 15 years of experience"
+    description: "Gym Instorctor and Personal Trainer with 5+ years of experience"
   },
   {
-    name: "Sarah 'Iron' Williams",
+    name: "Achintha Prabash",
     role: "Strength & Conditioning",
     image: "https://images.unsplash.com/photo-1609899537878-39f6f593b5d6?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
     description: "Certified strength coach and nutrition specialist"

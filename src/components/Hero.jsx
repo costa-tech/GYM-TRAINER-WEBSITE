@@ -33,13 +33,16 @@ const Hero = () => {
           >
             Push your limits. Break barriers. Become unstoppable.
           </motion.p>
-          <motion.button
+          <motion.a
+            href="https://forms.gle/gDVEkGDr2ZNbAaGJ8"
+            target="_blank"
+            rel="noopener noreferrer"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="bg-red-600 text-white px-12 py-5 rounded-none text-lg font-bold uppercase tracking-wider hover:bg-red-700 transition duration-300"
+            className="bg-red-600 text-white px-12 py-5 rounded-none text-lg font-bold uppercase tracking-wider hover:bg-red-700 transition duration-300 inline-block"
           >
             Start Training Now
-          </motion.button>
+          </motion.a>
         </div>
       </motion.div>
       <motion.div 
