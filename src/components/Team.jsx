@@ -13,12 +13,6 @@ const teamMembers = [
     role: "Strength & Conditioning",
     image: "https://images.unsplash.com/photo-1609899537878-39f6f593b5d6?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
     description: "Certified strength coach and nutrition specialist"
-  },
-  {
-    name: "Mike 'Thunder' Thompson",
-    role: "MMA Instructor",
-    image: "https://images.unsplash.com/photo-1613335231982-1d9d2d9c2c8e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    description: "Professional MMA fighter and experienced trainer"
   }
 ];
 
@@ -34,7 +28,7 @@ const Team = () => {
         >
           Elite Trainers
         </motion.h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
           {teamMembers.map((member, index) => (
             <motion.div
               key={index}

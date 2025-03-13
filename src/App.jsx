@@ -9,6 +9,7 @@ import Reviews from './components/Reviews';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import SplashScreen from './components/SplashScreen';
+import OnlineCoaching from './components/OnlineCoaching';
 
 function App() {
   const [showSplash, setShowSplash] = useState(true);
@@ -30,6 +31,7 @@ function App() {
                 <Contact />
               </>
             } />
+            <Route path="/online-coaching" element={<OnlineCoaching />} />
           </Routes>
           <Footer />
         </div>

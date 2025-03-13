@@ -668,6 +668,12 @@ footer {
   margin: 0 auto;
 }
 
+/* Add neon color text class for icons */
+.text-neon-color {
+  color: var(--neon-color);
+  text-shadow: 0 0 10px var(--neon-color), 0 0 20px var(--neon-color);
+}
+
 /* Media queries for responsive design */
 @media (max-width: 768px) {
   .hero-buttons {
