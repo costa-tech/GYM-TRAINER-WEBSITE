@@ -5,13 +5,17 @@ const teamMembers = [
   {
     name: "Himsara De Costa",
     role: "Personal Trainer",
-    image: "https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    description: "Gym Instorctor and Personal Trainer with 5+ years of experience"
+    // Replace this URL with the path to your image file
+    // For example: "/images/himsara.jpg" (if placed in a public/images folder)
+    image: "/images/himsara.jpg", 
+    description: "Gym Instructor and Personal Trainer with 5+ years of experience"
   },
   {
     name: "Achintha Prabash",
     role: "Strength & Conditioning",
-    image: "https://images.unsplash.com/photo-1609899537878-39f6f593b5d6?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+    // Replace this URL with the path to your image file
+    // For example: "/images/achintha.jpg" (if placed in a public/images folder)
+    image: "/images/achintha.jpg",
     description: "Certified strength coach and nutrition specialist"
   }
 ];
@@ -28,7 +32,7 @@ const Team = () => {
         >
           Elite Trainers
         </motion.h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+        <div className="flex flex-col md:flex-row justify-center items-center gap-10 max-w-5xl mx-auto">
           {teamMembers.map((member, index) => (
             <motion.div
               key={index}
@@ -36,9 +40,9 @@ const Team = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.2 }}
               viewport={{ once: true }}
-              className="bg-black p-6 group cursor-pointer"
+              className="bg-black p-6 group cursor-pointer rounded-xl overflow-hidden shadow-lg w-full md:w-2/5"
             >
-              <div className="relative mb-6 overflow-hidden">
+              <div className="relative mb-6 overflow-hidden rounded-lg">
                 <img 
                   src={member.image} 
                   alt={member.name}

@@ -41,16 +41,16 @@ const Services = () => {
         >
           Our Programs
         </motion.h2>
-        <div ref={ref} className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div ref={ref} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
           {services.map((service, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: index * 0.2 }}
-              className="relative group cursor-pointer overflow-hidden"
+              className="relative group cursor-pointer overflow-hidden rounded-xl shadow-lg"
             >
-              <div className="aspect-w-16 aspect-h-9">
+              <div className="aspect-w-1 aspect-h-1">
                 <img 
                   src={service.image} 
                   alt={service.title}
@@ -58,9 +58,9 @@ const Services = () => {
                 />
               </div>
               <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-90">
-                <div className="absolute bottom-0 left-0 p-8">
-                  <h3 className="text-2xl font-bold mb-2 uppercase">{service.title}</h3>
-                  <p className="text-gray-300">{service.description}</p>
+                <div className="absolute bottom-0 left-0 p-4">
+                  <h3 className="text-xl font-bold mb-1 uppercase">{service.title}</h3>
+                  <p className="text-gray-300 text-sm">{service.description}</p>
                 </div>
               </div>
             </motion.div>

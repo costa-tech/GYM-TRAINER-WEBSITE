@@ -89,7 +89,7 @@ const Reviews = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: index * 0.2 }}
-              className="bg-black p-8 relative group hover:bg-gray-900 transition duration-300"
+              className="bg-black p-8 relative group hover:bg-gray-900 transition duration-300 rounded-xl overflow-hidden"
             >
               <div className="flex items-center mb-6">
                 <img
@@ -114,7 +114,7 @@ const Reviews = () => {
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
                 onClick={() => toggleTransformation(index)}
-                className="w-full py-3 mb-6 border border-red-600 text-red-600 hover:bg-red-600 hover:text-white transition duration-300 uppercase font-bold tracking-wider text-sm flex items-center justify-center"
+                className="w-full py-3 mb-6 border border-red-600 text-red-600 hover:bg-red-600 hover:text-white transition duration-300 uppercase font-bold tracking-wider text-sm flex items-center justify-center rounded-lg"
               >
                 <span className="mr-2">
                   {activeView[index] ? 'Hide Transformation' : 'View Transformation'}
@@ -140,7 +140,7 @@ const Reviews = () => {
                   <div className="grid grid-cols-2 gap-4">
                     <div>
                       <p className="text-center text-gray-400 mb-2">BEFORE</p>
-                      <div className="aspect-w-3 aspect-h-4 overflow-hidden">
+                      <div className="aspect-w-3 aspect-h-4 overflow-hidden rounded-lg">
                         <img 
                           src={review.beforeImage} 
                           alt={`${review.name} before transformation`} 
@@ -150,7 +150,7 @@ const Reviews = () => {
                     </div>
                     <div>
                       <p className="text-center text-gray-400 mb-2">AFTER</p>
-                      <div className="aspect-w-3 aspect-h-4 overflow-hidden">
+                      <div className="aspect-w-3 aspect-h-4 overflow-hidden rounded-lg">
                         <img 
                           src={review.afterImage} 
                           alt={`${review.name} after transformation`} 
