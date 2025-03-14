@@ -46,13 +46,6 @@ const SplashScreen = ({ onComplete }) => {
     };
   }, [onComplete]);
   
-  // Handle manual skip
-  const handleSkip = () => {
-    console.log('Manual skip triggered');
-    setIsTimedOut(true);
-    onComplete();
-  };
-  
   return (
     <div className="fixed inset-0 bg-black z-50 flex items-center justify-center">
       <div className="text-center">
@@ -89,14 +82,6 @@ const SplashScreen = ({ onComplete }) => {
             className="absolute top-0 left-0 h-full w-full bg-gradient-to-r from-red-600 to-orange-500"
           />
         </div>
-        
-        {/* Skip button */}
-        <button
-          onClick={handleSkip}
-          className="mt-8 text-sm text-gray-600 hover:text-gray-400 transition-colors"
-        >
-          Tap to continue
-        </button>
       </div>
     </div>
   );
