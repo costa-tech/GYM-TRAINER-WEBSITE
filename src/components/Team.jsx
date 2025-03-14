@@ -13,7 +13,7 @@ const teamMembers = [
     }
   },
   {
-    name: "Prabash Gamage",
+    name: "Achintha Prabash",
     role: "Strength & Conditioning",
     image: "/images/achintha.jpg",
     description: "Certified strength coach and nutrition specialist",
