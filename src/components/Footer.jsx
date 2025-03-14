@@ -55,8 +55,21 @@ const Footer = () => {
           </div>
         </div>
         
-        <div className="mt-8 pt-8 border-t border-gray-800 text-center text-gray-400">
-          <p>&copy; {new Date().getFullYear()} FitFuture. All rights reserved.</p>
+        {/* Costa Production Copyright Section */}
+        <div className="mt-8 pt-8 border-t border-gray-800 text-center">
+          <div className="flex flex-col items-center justify-center mb-4">
+            <img 
+              src="/images/costaproduction.png" 
+              alt="Costa Production Logo" 
+              className="h-20 mb-3" // Increased from h-12 to h-20 and mb-2 to mb-3
+            />
+            <p className="text-gray-400">
+              &copy; {new Date().getFullYear()} COSTA PRODUCTION. All rights reserved.
+            </p>
+          </div>
+          <p className="text-sm text-gray-600 mt-2">
+            Website designed and developed by COSTA PRODUCTION
+          </p>
         </div>
       </div>
     </footer>
