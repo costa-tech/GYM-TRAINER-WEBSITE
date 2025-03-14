@@ -14,9 +14,20 @@ const Contact = () => {
         >
           <h2 className="text-5xl font-black text-center mb-16 uppercase tracking-wider">Join The Elite</h2>
 
-          {/* Netlify Forms */}
-          <form name="contact" method="POST" data-netlify="true" className="space-y-6">
+          {/* Netlify Forms with proper data-netlify attribute and hidden form-name field */}
+          <form 
+            name="contact" 
+            method="POST" 
+            data-netlify="true" 
+            netlify-honeypot="bot-field"
+            className="space-y-6"
+            action="/success" // Add a success redirect
+          >
+            {/* These hidden fields are crucial for Netlify form detection */}
             <input type="hidden" name="form-name" value="contact" />
+            <div hidden>
+              <input name="bot-field" />
+            </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
@@ -55,6 +66,7 @@ const Contact = () => {
               ></textarea>
             </div>
             <motion.button
+              type="submit"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="w-full bg-red-600 text-white px-8 py-4 text-lg font-bold uppercase tracking-wider hover:bg-red-700 transition duration-300"
