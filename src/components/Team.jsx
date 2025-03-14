@@ -5,7 +5,7 @@ const teamMembers = [
   {
     name: "Himsara De Costa",
     role: "Personal Trainer",
-    image: "/images/himsara.jpg",
+    image: "/images/costa.jpg",
     description: "Gym Instructor and Personal Trainer with 5+ years of experience",
     social: {
       instagram: "https://www.instagram.com/h.__costa?igsh=MXI0OGwwejYzZ3Jjag==",
@@ -15,7 +15,7 @@ const teamMembers = [
   {
     name: "Prabash Gamage",
     role: "Strength & Conditioning",
-    image: "/images/achintha.jpg",
+    image: "/images/prabash.jpg",
     description: "Certified strength coach and nutrition specialist",
     social: {
       instagram: "https://www.instagram.com/pabashh_?igsh=MTE2eGgwemI0Y2xmcQ==",
