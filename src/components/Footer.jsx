@@ -33,6 +33,7 @@ const Footer = () => {
             <p className="text-white mt-4">
               +94 (71) 228-1369 - Costa<br />
               +94 (76) 697-8929 - Achintha<br />
+              <br />
               <a 
                 href="mailto:himsaradecosta@gmail.com" 
                 className="hover:text-red-600 transition duration-300 animated-link"
