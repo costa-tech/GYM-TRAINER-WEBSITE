@@ -37,13 +37,50 @@ const ScrollToTop = () => {
 
 function App() {
   const [showSplash, setShowSplash] = useState(true);
+  const [contentReady, setContentReady] = useState(false);
+
+  // Handle initial loading and set up fallback timer
+  useEffect(() => {
+    // Mark content as ready (pre-loaded) after a short delay
+    const readyTimer = setTimeout(() => {
+      setContentReady(true);
+    }, 1000);
+    
+    // Fallback timer to force hide splash screen
+    const fallbackTimer = setTimeout(() => {
+      console.log("Fallback timer triggered - forcing splash screen to hide");
+      setShowSplash(false);
+    }, 5000);
+    
+    return () => {
+      clearTimeout(readyTimer);
+      clearTimeout(fallbackTimer);
+    };
+  }, []);
+  
+  const handleSplashComplete = () => {
+    console.log("Splash screen complete callback");
+    if (contentReady) {
+      setShowSplash(false);
+    } else {
+      // If content isn't ready yet, wait a bit then hide splash
+      setTimeout(() => setShowSplash(false), 500);
+    }
+  };
+
+  console.log(`App render - showSplash: ${showSplash}, contentReady: ${contentReady}`);
 
   return (
     <Router>
       {showSplash ? (
-        <SplashScreen onComplete={() => setShowSplash(false)} />
+        <SplashScreen onComplete={handleSplashComplete} />
       ) : (
-        <div className="min-h-screen bg-gradient-to-b from-gray-900 to-black text-white">
+        <motion.div 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
+          className="min-h-screen bg-gradient-to-b from-gray-900 to-black text-white"
+        >
           <Navbar />
           <ScrollToTop />
           <Routes>
@@ -59,7 +96,7 @@ function App() {
             <Route path="/online-coaching" element={<OnlineCoaching />} />
           </Routes>
           <Footer />
-        </div>
+        </motion.div>
       )}
     </Router>
   );
