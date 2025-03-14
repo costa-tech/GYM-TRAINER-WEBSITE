@@ -67,9 +67,6 @@ const Footer = () => {
               &copy; {new Date().getFullYear()} COSTA PRODUCTION. All rights reserved.
             </p>
           </div>
-          <p className="text-sm text-gray-600 mt-2">
-            Website designed and developed by COSTA PRODUCTION
-          </p>
         </div>
       </div>
     </footer>
