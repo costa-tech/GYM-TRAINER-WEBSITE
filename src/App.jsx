@@ -16,18 +16,22 @@ const ScrollToTop = () => {
   const { pathname, hash } = useLocation();
 
   useEffect(() => {
-    // If there's no hash, scroll to top
+    // Always scroll to top on route change
     if (!hash) {
       window.scrollTo(0, 0);
     } 
-    // If there's a hash, scroll to the element
+    // If there's a hash, scroll to the element with extra handling
     else {
       const id = hash.replace('#', '');
       const element = document.getElementById(id);
       if (element) {
+        // Add a slight delay to ensure proper scrolling
         setTimeout(() => {
           element.scrollIntoView({ behavior: 'smooth' });
         }, 100);
+      } else {
+        // If hash element not found, scroll to top
+        window.scrollTo(0, 0);
       }
     }
   }, [pathname, hash]); // Run this effect when location changes

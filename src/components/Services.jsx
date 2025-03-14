@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import { Link } from 'react-router-dom';
 
 const services = [
   {
@@ -66,6 +67,26 @@ const Services = () => {
             </motion.div>
           ))}
         </div>
+        
+        {/* Added Online Coaching Call to Action */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mt-16 text-center"
+        >
+          <h3 className="text-2xl font-bold mb-4">Can't Make It To The Gym?</h3>
+          <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
+            We offer comprehensive online coaching programs tailored to your needs, 
+            delivering expert guidance no matter where you are.
+          </p>
+          <Link 
+            to="/online-coaching"
+            className="btn btn-primary inline-block px-8 py-4 text-lg font-bold uppercase"
+          >
+            Explore Online Coaching
+          </Link>
+        </motion.div>
       </div>
     </section>
   );

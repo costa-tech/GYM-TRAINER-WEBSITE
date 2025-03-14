@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -41,7 +42,20 @@ const Footer = () => {
             </p>
           </div>
         </div>
-        <div className="mt-16 pt-8 border-t border-gray-800 text-center text-gray-400">
+
+        {/* Quick Links Section */}
+        <div className="mt-12 pt-8 border-t border-gray-800">
+          <h4 className="text-center text-xl font-bold mb-6">Quick Links</h4>
+          <div className="flex flex-wrap justify-center gap-x-8 gap-y-4">
+            <Link to="/#services" className="text-gray-400 hover:text-white transition-colors">Programs</Link>
+            <Link to="/#team" className="text-gray-400 hover:text-white transition-colors">Trainers</Link>
+            <Link to="/online-coaching" className="text-gray-400 hover:text-white transition-colors">Online Coaching</Link>
+            <Link to="/#reviews" className="text-gray-400 hover:text-white transition-colors">Success Stories</Link>
+            <Link to="/#contact" className="text-gray-400 hover:text-white transition-colors">Contact</Link>
+          </div>
+        </div>
+        
+        <div className="mt-8 pt-8 border-t border-gray-800 text-center text-gray-400">
           <p>&copy; {new Date().getFullYear()} FitFuture. All rights reserved.</p>
         </div>
       </div>
