@@ -8,18 +8,6 @@ const packageCategories = [
     description: "In-person training sessions with our expert coaches",
     packages: [
       {
-        name: "Basic",
-        price: "LKR 5,000",
-        period: "per session",
-        features: [
-          "One-on-one coaching",
-          "Personalized workout plan",
-          "Access to equipment",
-          "Progress tracking"
-        ],
-        highlight: false
-      },
-      {
         name: "Standard",
         price: "LKR 20,000",
         period: "per month",
@@ -52,18 +40,6 @@ const packageCategories = [
     title: "Online Coaching",
     description: "Remote training with our coaches from anywhere in the world",
     packages: [
-      {
-        name: "Basic",
-        price: "LKR 8,000",
-        period: "per month",
-        features: [
-          "Weekly workout plans",
-          "Video technique guidance",
-          "Email support",
-          "Monthly check-in"
-        ],
-        highlight: false
-      },
       {
         name: "Standard",
         price: "LKR 15,000",
@@ -203,7 +179,8 @@ const Packages = () => {
                 {category.description}
               </motion.p>
               
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {/* Updated grid with proper centering */}
+              <div className={`grid grid-cols-1 ${category.packages.length === 2 ? 'md:grid-cols-2 max-w-4xl' : 'md:grid-cols-3'} gap-8 mx-auto`}>
                 {category.packages.map((pkg, pkgIndex) => (
                   <motion.div
                     key={pkgIndex}
