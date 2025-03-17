@@ -35,6 +35,7 @@ const Navbar = () => {
           {/* Desktop Menu */}
           <div className="hidden md:flex space-x-12">
             <NavLink to="/#services">Programs</NavLink>
+            <NavLink to="/packages">Packages</NavLink>
             <NavLink to="/#team">Trainers</NavLink>
             <NavLink to="/online-coaching">Online Coaching</NavLink>
             <NavLink to="/#reviews">Reviews</NavLink>
@@ -72,6 +73,7 @@ const Navbar = () => {
             className="md:hidden mt-6 py-6 border-t border-gray-800"
           >
             <MobileNavLink to="/#services">Programs</MobileNavLink>
+            <MobileNavLink to="/packages">Packages</MobileNavLink>
             <MobileNavLink to="/#team">Trainers</MobileNavLink>
             <MobileNavLink to="/online-coaching">Online Coaching</MobileNavLink>
             <MobileNavLink to="/#reviews">Reviews</MobileNavLink>

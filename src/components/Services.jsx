@@ -68,24 +68,32 @@ const Services = () => {
           ))}
         </div>
         
-        {/* Added Online Coaching Call to Action */}
+        {/* Call to Action Section with links to both Online Coaching and Packages */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="mt-16 text-center"
         >
-          <h3 className="text-2xl font-bold mb-4">Can't Make It To The Gym?</h3>
+          <h3 className="text-2xl font-bold mb-4">Ready to Transform Your Life?</h3>
           <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
-            We offer comprehensive online coaching programs tailored to your needs, 
-            delivering expert guidance no matter where you are.
+            We offer comprehensive training solutions to fit every lifestyle and preference.
+            Check out our structured packages or explore our online coaching options.
           </p>
-          <Link 
-            to="/online-coaching"
-            className="btn btn-primary inline-block px-8 py-4 text-lg font-bold uppercase"
-          >
-            Explore Online Coaching
-          </Link>
+          <div className="flex flex-col sm:flex-row justify-center gap-4">
+            <Link 
+              to="/packages"
+              className="btn btn-primary inline-block px-8 py-4 text-lg font-bold uppercase"
+            >
+              View Training Packages
+            </Link>
+            <Link 
+              to="/online-coaching"
+              className="btn btn-secondary inline-block px-8 py-4 text-lg font-bold uppercase"
+            >
+              Explore Online Coaching
+            </Link>
+          </div>
         </motion.div>
       </div>
     </section>

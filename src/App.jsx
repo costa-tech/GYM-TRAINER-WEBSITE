@@ -10,6 +10,7 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import SplashScreen from './components/SplashScreen';
 import OnlineCoaching from './components/OnlineCoaching';
+import Packages from './components/Packages';
 
 // ScrollToTop component to handle scroll position on route change
 const ScrollToTop = () => {
@@ -98,6 +99,7 @@ function App() {
               </>
             } />
             <Route path="/online-coaching" element={<OnlineCoaching />} />
+            <Route path="/packages" element={<Packages />} />
           </Routes>
           <Footer />
         </motion.div>
