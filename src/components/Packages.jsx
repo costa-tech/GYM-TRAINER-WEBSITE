@@ -9,7 +9,7 @@ const packageCategories = [
     packages: [
       {
         name: "Basic",
-        price: "$50",
+        price: "LKR 5,000",
         period: "per session",
         features: [
           "One-on-one coaching",
@@ -21,7 +21,7 @@ const packageCategories = [
       },
       {
         name: "Standard",
-        price: "$200",
+        price: "LKR 20,000",
         period: "per month",
         features: [
           "8 sessions per month",
@@ -34,7 +34,7 @@ const packageCategories = [
       },
       {
         name: "Premium",
-        price: "$300",
+        price: "LKR 30,000",
         period: "per month",
         features: [
           "12 sessions per month",
@@ -54,7 +54,7 @@ const packageCategories = [
     packages: [
       {
         name: "Basic",
-        price: "$80",
+        price: "LKR 8,000",
         period: "per month",
         features: [
           "Weekly workout plans",
@@ -66,7 +66,7 @@ const packageCategories = [
       },
       {
         name: "Standard",
-        price: "$150",
+        price: "LKR 15,000",
         period: "per month",
         features: [
           "Custom weekly workout plans",
@@ -79,7 +79,7 @@ const packageCategories = [
       },
       {
         name: "Premium",
-        price: "$250",
+        price: "LKR 25,000",
         period: "per month",
         features: [
           "Fully customized workout plans",
@@ -99,7 +99,7 @@ const packageCategories = [
     packages: [
       {
         name: "Workout Plan",
-        price: "$40",
+        price: "LKR 4,000",
         period: "one-time",
         features: [
           "4-week workout program",
@@ -111,7 +111,7 @@ const packageCategories = [
       },
       {
         name: "Nutrition Plan",
-        price: "$40",
+        price: "LKR 4,000",
         period: "one-time",
         features: [
           "4-week meal plan",
@@ -124,7 +124,7 @@ const packageCategories = [
       },
       {
         name: "Complete Package",
-        price: "$70",
+        price: "LKR 7,000",
         period: "one-time",
         features: [
           "4-week workout program",
