@@ -15,6 +15,7 @@
   --border-radius-sm: 8px;
   --border-radius-md: 15px;
   --border-radius-lg: 30px;
+  --navbar-height: 80px; 
 }
 
 html {
@@ -697,4 +698,52 @@ footer {
   .glow-container::after {
     display: none;
   }
+}
+
+/* Enhanced Navbar visibility */
+nav.fixed {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+@supports not (backdrop-filter: blur(8px)) {
+  nav.fixed {
+    background-color: rgba(0, 0, 0, 0.9) !important;
+  }
+}
+
+nav.fixed.shadow-lg {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.7), 
+              0 4px 6px -2px rgba(0, 0, 0, 0.5);
+}
+
+/* Ensure links have higher contrast */
+nav a {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+/* Add a subtle underline effect to active nav item */
+nav a.active {
+  position: relative;
+}
+
+nav a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--primary-color);
+  box-shadow: 0 0 8px var(--primary-color);
+}
+
+/* Fix for main page content to prevent navbar overlap */
+main {
+  padding-top: var(--navbar-height, 0);
+}
+
+/* Ensure hero sections on inner pages have proper spacing */
+.min-h-[60vh] {
+  min-height: calc(60vh + var(--navbar-height, 0px));
 }

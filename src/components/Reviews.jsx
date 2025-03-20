@@ -4,12 +4,12 @@ import { useInView } from 'react-intersection-observer';
 
 const reviews = [
   {
-    name: "John Smith",
+    name: "Hiru",
     image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    review: "Transformed my life completely! Lost 30kg in 6 months with their personalized training program.",
+    review: "Transformed my life completely! Lost 10kg in 6 months and shaped my body with their personalized training program.",
     rating: 5,
     program: "Personal Training",
-    beforeImage: "https://images.unsplash.com/photo-1624555130581-1d9cca783bc0?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+    beforeImage: "\images\hirubefore.jpg",
     afterImage: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
     duration: "6 months"
   },

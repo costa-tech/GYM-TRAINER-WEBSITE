@@ -8,9 +8,13 @@ const Navbar = () => {
   const location = useLocation();
 
   useEffect(() => {
+    // Set initial scroll state on page load
+    setIsScrolled(window.scrollY > 50);
+    
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
+    
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -21,7 +25,13 @@ const Navbar = () => {
   }, [location]);
 
   return (
-    <nav className={`fixed w-full z-50 transition duration-300 ${isScrolled ? 'bg-black py-4' : 'bg-transparent py-6'}`}>
+    <nav 
+      className={`fixed w-full z-[100] transition-all duration-300 ${
+        isScrolled 
+          ? 'bg-black bg-opacity-95 shadow-lg py-4' 
+          : 'bg-gradient-to-b from-black to-transparent py-6'
+      }`}
+    >
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between">
           <motion.div
@@ -29,7 +39,7 @@ const Navbar = () => {
             animate={{ opacity: 1 }}
             className="text-3xl font-black uppercase tracking-wider"
           >
-            <Link to="/">FitFuture</Link>
+            <Link to="/" className="relative z-10">FitFuture</Link>
           </motion.div>
 
           {/* Desktop Menu */}
@@ -44,8 +54,9 @@ const Navbar = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden"
+            className="md:hidden relative z-10"
             onClick={() => setIsOpen(!isOpen)}
+            aria-label={isOpen ? "Close menu" : "Open menu"}
           >
             <svg
               className="w-8 h-8"
@@ -70,7 +81,7 @@ const Navbar = () => {
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="md:hidden mt-6 py-6 border-t border-gray-800"
+            className="md:hidden mt-6 py-6 border-t border-gray-800 bg-black bg-opacity-95"
           >
             <MobileNavLink to="/#services">Programs</MobileNavLink>
             <MobileNavLink to="/packages">Packages</MobileNavLink>
@@ -89,7 +100,7 @@ const Navbar = () => {
 const NavLink = ({ to, children }) => (
   <Link
     to={to}
-    className="text-gray-300 hover:text-white font-semibold uppercase tracking-wider transition duration-300"
+    className="text-gray-300 hover:text-white font-semibold uppercase tracking-wider transition duration-300 relative z-10"
   >
     {children}
   </Link>

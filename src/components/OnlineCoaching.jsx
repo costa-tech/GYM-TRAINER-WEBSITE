@@ -10,8 +10,8 @@ const OnlineCoaching = () => {
 
   return (
     <>
-      {/* Hero Section */}
-      <div className="relative min-h-[60vh] flex items-center justify-center">
+      {/* Hero Section - Adding padding-top to prevent navbar overlap */}
+      <div className="relative min-h-[60vh] flex items-center justify-center pt-24">
         <div 
           className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1599058917765-a780eda07a3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80')] bg-cover bg-center"
         >

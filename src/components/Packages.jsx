@@ -9,10 +9,10 @@ const packageCategories = [
     packages: [
       {
         name: "Standard",
-        price: "LKR 20,000",
+        price: "LKR 15,000",
         period: "per month",
         features: [
-          "8 sessions per month",
+          "12 sessions per month",
           "Personalized workout plan",
           "Diet consultation",
           "Progress tracking",
@@ -22,7 +22,7 @@ const packageCategories = [
       },
       {
         name: "Premium",
-        price: "LKR 30,000",
+        price: "LKR 25,000",
         period: "per month",
         features: [
           "12 sessions per month",
@@ -42,10 +42,10 @@ const packageCategories = [
     packages: [
       {
         name: "Standard",
-        price: "LKR 15,000",
+        price: "LKR 10,000",
         period: "per month",
         features: [
-          "Custom weekly workout plans",
+          "Custom workout plans",
           "Video technique analysis",
           "Basic nutrition guidance",
           "Weekly check-ins",
@@ -55,11 +55,11 @@ const packageCategories = [
       },
       {
         name: "Premium",
-        price: "LKR 25,000",
+        price: "LKR 20,000",
         period: "per month",
         features: [
           "Fully customized workout plans",
-          "1-on-1 video coaching sessions",
+          "Video coaching sessions",
           "Detailed nutrition plans",
           "Daily check-ins",
           "24/7 WhatsApp support",
@@ -75,7 +75,7 @@ const packageCategories = [
     packages: [
       {
         name: "Workout Plan",
-        price: "LKR 4,000",
+        price: "LKR 3,000",
         period: "one-time",
         features: [
           "4-week workout program",
@@ -87,7 +87,7 @@ const packageCategories = [
       },
       {
         name: "Nutrition Plan",
-        price: "LKR 4,000",
+        price: "LKR 3,500",
         period: "one-time",
         features: [
           "4-week meal plan",
@@ -100,7 +100,7 @@ const packageCategories = [
       },
       {
         name: "Complete Package",
-        price: "LKR 7,000",
+        price: "LKR 6,000",
         period: "one-time",
         features: [
           "4-week workout program",
@@ -119,8 +119,8 @@ const packageCategories = [
 const Packages = () => {
   return (
     <>
-      {/* Hero Section */}
-      <div className="relative min-h-[40vh] flex items-center justify-center">
+      {/* Hero Section - Adding padding-top to prevent navbar overlap */}
+      <div className="relative min-h-[60vh] flex items-center justify-center pt-24">
         <div 
           className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1517344884509-a0c97ec11bcc?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80')] bg-cover bg-center"
         >
@@ -250,14 +250,6 @@ const Packages = () => {
               <FAQ 
                 question="Can I switch between packages?"
                 answer="Yes, you can upgrade or downgrade your package at the start of a new billing cycle. Simply contact us a few days before your next payment."
-              />
-              <FAQ
-                question="Is there a contract or minimum commitment?"
-                answer="No, our packages are billed month to month with no long-term contracts. You can cancel anytime."
-              />
-              <FAQ
-                question="Do you offer refunds?"
-                answer="We offer a 7-day satisfaction guarantee for new clients. If you're not satisfied with our service, we'll provide a full refund within the first week."
               />
               <FAQ
                 question="How do the online sessions work?"
