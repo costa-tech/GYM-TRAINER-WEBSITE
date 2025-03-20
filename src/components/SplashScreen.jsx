@@ -2,28 +2,25 @@ import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 
 const SplashScreen = ({ onComplete }) => {
-  const [isTimedOut, setIsTimedOut] = useState(false);
+  // Remove the unused variable declaration
   
   // Use multiple approaches to ensure the splash screen completes
   useEffect(() => {
     // Primary timer
     const primaryTimer = setTimeout(() => {
       console.log('Primary timer completed');
-      setIsTimedOut(true);
       onComplete();
     }, 2500);
     
     // Backup timer (in case primary fails)
     const backupTimer = setTimeout(() => {
       console.log('Backup timer triggered');
-      setIsTimedOut(true);
       onComplete();
     }, 4000);
     
     // Extreme fallback
     const emergencyTimer = setTimeout(() => {
       console.log('Emergency timer triggered');
-      setIsTimedOut(true);
       onComplete();
     }, 6000);
     
@@ -31,7 +28,6 @@ const SplashScreen = ({ onComplete }) => {
     const handleLoad = () => {
       console.log('Window load event triggered');
       setTimeout(() => {
-        setIsTimedOut(true);
         onComplete();
       }, 1000);
     };
@@ -49,7 +45,6 @@ const SplashScreen = ({ onComplete }) => {
   // Handle manual skip
   const handleSkip = () => {
     console.log('Manual skip triggered');
-    setIsTimedOut(true);
     onComplete();
   };
   

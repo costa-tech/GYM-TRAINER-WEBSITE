@@ -744,6 +744,6 @@ main {
 }
 
 /* Ensure hero sections on inner pages have proper spacing */
-.min-h-[60vh] {
+.min-h-\[60vh\] {
   min-height: calc(60vh + var(--navbar-height, 0px));
 }

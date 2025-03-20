@@ -9,7 +9,7 @@ const reviews = [
     review: "Transformed my life completely! Lost 10kg in 6 months and shaped my body with their personalized training program.",
     rating: 5,
     program: "Personal Training",
-    beforeImage: "\images\hirubefore.jpg",
+    beforeImage: "/images/hirubefore.jpg", // Fix the path by adding forward slash
     afterImage: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
     duration: "6 months"
   },

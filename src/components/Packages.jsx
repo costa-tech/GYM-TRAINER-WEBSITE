@@ -100,8 +100,10 @@ const packageCategories = [
       },
       {
         name: "Complete Package",
-        price: "LKR 6,000",
+        price: "LKR 5,000",
+        originalPrice: "LKR 6,000",
         period: "one-time",
+        discount: "Save LKR 1,000",
         features: [
           "4-week workout program",
           "4-week meal plan",
@@ -188,7 +190,7 @@ const Packages = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.1 * pkgIndex }}
-                    className={`relative overflow-hidden rounded-xl ${pkg.highlight ? 'bg-gradient-to-br from-gray-900 to-gray-800 ring-2 ring-red-500' : 'bg-gray-900 border border-gray-800'}`}
+                    className={`relative overflow-hidden rounded-xl ${pkg.highlight ? 'bg-gradient-to-br from-gray-900 to-gray-800 ring-2 ring-red-500' : 'bg-gray-900 border border-gray-800'} flex flex-col`}
                   >
                     {pkg.highlight && (
                       <div className="absolute -right-10 top-6 rotate-45 bg-red-600 text-white px-10 py-1 text-sm font-bold">
@@ -196,14 +198,22 @@ const Packages = () => {
                       </div>
                     )}
                     
-                    <div className="p-8">
+                    <div className="p-8 flex flex-col flex-grow">
                       <h3 className="text-2xl font-bold mb-2">{pkg.name}</h3>
                       <div className="flex items-end mb-6">
                         <span className="text-4xl font-black">{pkg.price}</span>
                         <span className="text-gray-400 ml-2">{pkg.period}</span>
+                        
+                        {/* Show discount if available */}
+                        {pkg.originalPrice && (
+                          <div className="flex flex-col ml-2">
+                            <span className="text-gray-400 line-through text-sm">{pkg.originalPrice}</span>
+                            <span className="text-green-500 text-sm font-bold">{pkg.discount}</span>
+                          </div>
+                        )}
                       </div>
                       
-                      <ul className="space-y-3 mb-8">
+                      <ul className="space-y-3 mb-8 flex-grow">
                         {pkg.features.map((feature, featureIndex) => (
                           <li key={featureIndex} className="flex items-start">
                             <svg className="w-5 h-5 text-green-500 mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
@@ -224,7 +234,7 @@ const Packages = () => {
                           pkg.highlight 
                             ? 'bg-red-600 hover:bg-red-700 text-white' 
                             : 'bg-gray-800 hover:bg-gray-700 text-white'
-                        }`}
+                        } mt-auto`}
                       >
                         Choose Plan
                       </motion.a>
