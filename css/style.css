@@ -747,3 +747,238 @@ main {
 .min-h-\[60vh\] {
   min-height: calc(60vh + var(--navbar-height, 0px));
 }
+
+/* Add these responsive styles to the bottom of the file */
+
+/* Enhanced mobile responsiveness */
+@media (max-width: 640px) {
+  :root {
+    --navbar-height: 70px;
+  }
+  
+  /* Better font sizing for small screens */
+  h1, .text-5xl, .text-6xl, .text-7xl, .text-8xl {
+    font-size: 2.5rem !important;
+    line-height: 1.2 !important;
+  }
+  
+  h2, .text-4xl {
+    font-size: 2rem !important;
+  }
+  
+  h3, .text-3xl {
+    font-size: 1.75rem !important;
+  }
+  
+  /* Add extra padding to containers on small screens */
+  .container {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+  
+  /* Adjust button sizes on mobile */
+  .btn, a.btn {
+    padding: 0.75rem 1.5rem;
+  }
+  
+  /* Improve form elements on mobile */
+  input, textarea {
+    padding: 0.75rem !important;
+  }
+  
+  /* Fix potential overflow issues */
+  body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+  
+  /* Ensure images don't overflow */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Fix hero section heights on mobile */
+  .min-h-\[40vh\], .min-h-\[60vh\] {
+    min-height: 90vh !important;
+  }
+  
+  /* Better spacing for cards on mobile */
+  .card, .cyber-section, .glass-container {
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  /* Ensure grid gap isn't too large on mobile */
+  .gap-8, .gap-10, .gap-12 {
+    gap: 1rem !important;
+  }
+
+  /* Fix mobile navigation overlay */
+  .md\:hidden.fixed {
+    height: calc(100vh - 70px);
+    overflow-y: auto;
+  }
+
+  /* Better spacing for mobile buttons */
+  .btn, a.btn {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 0.75rem;
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  /* Fix image aspect ratios on mobile */
+  .aspect-w-1.aspect-h-1 {
+    position: relative;
+    padding-bottom: 100%;
+    height: 0;
+  }
+  
+  .aspect-w-1.aspect-h-1 > img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  /* Improve padding for all sections */
+  section {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+  
+  /* Fix footer on mobile */
+  footer .grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+}
+
+/* Fix iOS Safari 100vh issue */
+@supports (-webkit-touch-callout: none) {
+  .min-h-screen, .h-screen {
+    height: -webkit-fill-available;
+  }
+}
+
+/* Enhanced tablet responsiveness */
+@media (min-width: 641px) and (max-width: 1024px) {
+  /* Adjust grid columns for tablets */
+  .md\:grid-cols-3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+  
+  /* Better card layout for tablets */
+  .card, .cyber-section {
+    height: 100%;
+  }
+  
+  /* Improve button sizing on tablet */
+  .btn, a.btn {
+    padding: 0.875rem 1.75rem;
+  }
+
+  /* Fix footer on tablets */
+  footer .grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  
+  /* Adjust button layout on tablets */
+  .flex-col.sm\:flex-row > .btn {
+    flex: 1;
+    text-align: center;
+  }
+}
+
+/* Fix for Safari overflow issues */
+.overflow-hidden {
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Fix for FlexBox gap issues in Safari */
+@supports not (gap: 1rem) {
+  .flex {
+    margin: -0.5rem;
+  }
+  .flex > * {
+    margin: 0.5rem;
+  }
+}
+
+/* Add these specific mobile navigation fixes at the end of your file */
+
+/* Fix mobile menu visibility and touch issues */
+@media (max-width: 768px) {
+  /* Make sure menu toggle is easily tappable */
+  nav button {
+    min-height: 44px;
+    min-width: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Fix scroll bounce issues in the mobile menu */
+  .md\:hidden.fixed {
+    position: fixed !important;
+    top: var(--navbar-height, 70px) !important;
+    height: calc(100vh - var(--navbar-height, 70px)) !important;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+  }
+  
+  /* Add active state for better touch feedback */
+  nav a:active,
+  nav button:active {
+    opacity: 0.7;
+  }
+  
+  /* Address any iOS specific menu visibility issues */
+  @supports (-webkit-touch-callout: none) {
+    .md\:hidden.fixed {
+      position: fixed !important;
+      height: calc(100% - var(--navbar-height, 70px)) !important;
+    }
+  }
+  
+  /* Improve touch target sizes for all menu items */
+  nav a, .MobileNavLink {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+}
+
+/* Fix flash of navigation issues on page transitions */
+.nav-animation-fix {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Fix mobile menu dark overlay */
+.mobile-menu-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 30;
+  display: none;
+}
+
+@media (max-width: 768px) {
+  body.menu-open {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+  }
+  
+  body.menu-open .mobile-menu-overlay {
+    display: block;
+  }
+}

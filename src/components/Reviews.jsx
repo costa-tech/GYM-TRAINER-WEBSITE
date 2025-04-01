@@ -13,7 +13,7 @@ const reviews = [
     duration: "6 months"
   },
   {
-    name: "Sarah Chen",
+    name: "Sagara Lochana",
     review: "The boxing classes are intense and amazing. The trainers really push you to your limits!",
     rating: 5,
     program: "Personal Training",
@@ -22,22 +22,22 @@ const reviews = [
     duration: "8 months"
   },
   {
-    name: "Michael Rodriguez",
-    review: "Best HIIT classes in the city! The energy is incredible and results are real.",
+    name: "Tharindu Perera",
+    review: "The nutrition plan was a game changer. I learned how to eat right and fuel my workouts.",
     rating: 5,
     program: "Personal Training",
-    beforeImage: "https://images.unsplash.com/photo-1594381898411-846e7d193883?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    afterImage: "https://images.unsplash.com/photo-1605296867724-fa87a8ef53fd?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    duration: "4 months"
+    beforeImage: "/images/balabefore.jpg",
+    afterImage: "/images/balaafter.jpg",
+    duration: "3 months"
   },
   {
-    name: "Emma Wilson",
-    review: "The strength training program helped me achieve goals I never thought possible.",
+    name: "Santhush Samarajeewan",
+    review: "I was skeptical at first, but the results speak for themselves. I feel stronger and more confident.",
     rating: 5,
     program: "Personal Training",
-    beforeImage: "https://images.unsplash.com/photo-1506784242126-2a0b0b89c56c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    afterImage: "https://images.unsplash.com/photo-1548690312-e3b507d8c110?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    duration: "5 months"
+    beforeImage: "images/shaggybefore.jpg",
+    afterImage: "/images/shaggyafter.jpg",
+    duration: "6 months"
   }
 ];
 
@@ -58,8 +58,8 @@ const Reviews = () => {
   };
 
   return (
-    <section className="py-20 bg-gray-900" id="reviews">
-      <div className="container mx-auto px-6">
+    <section className="py-16 md:py-20 bg-gray-900" id="reviews"> {/* Adjusted padding for mobile */}
+      <div className="container mx-auto px-4 md:px-6"> {/* Adjusted padding for mobile */}
         <motion.h2
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -78,14 +78,14 @@ const Reviews = () => {
           Real results from real clients. See the incredible transformations achieved with our personalized training programs.
         </motion.p>
         
-        <div ref={ref} className="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <div ref={ref} className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-10"> {/* Reduced gap on mobile */}
           {reviews.map((review, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: index * 0.2 }}
-              className="bg-black p-8 relative group hover:bg-gray-900 transition duration-300 rounded-xl overflow-hidden border border-gray-800 flex flex-col"
+              className="bg-black p-5 md:p-8 relative group hover:bg-gray-900 transition duration-300 rounded-xl overflow-hidden border border-gray-800 flex flex-col"
             >
               {/* Review Header - Improved layout */}
               <div className="border-b border-gray-800 pb-4 mb-6">
@@ -145,30 +145,32 @@ const Reviews = () => {
                   animate={{ opacity: 1, height: 'auto' }}
                   exit={{ opacity: 0, height: 0 }}
                   transition={{ duration: 0.3 }}
-                  className="mt-4 bg-gradient-to-b from-black to-gray-900 p-4 rounded-lg border border-gray-800"
+                  className="mt-4 bg-gradient-to-b from-black to-gray-900 p-3 md:p-4 rounded-lg border border-gray-800"
                 >
-                  <div className="grid grid-cols-2 gap-4">
+                  <div className="grid grid-cols-2 gap-2 md:gap-4"> {/* Reduced gap on mobile */}
                     <div className="flex flex-col">
-                      <div className="bg-red-600/10 p-2 rounded-t-lg">
-                        <p className="text-center text-gray-400 font-semibold">BEFORE</p>
+                      <div className="bg-red-600/10 p-1 md:p-2 rounded-t-lg">
+                        <p className="text-center text-gray-400 font-semibold text-xs md:text-sm">BEFORE</p>
                       </div>
                       <div className="aspect-w-3 aspect-h-4 overflow-hidden rounded-b-lg border border-gray-800">
                         <img 
                           src={review.beforeImage} 
                           alt={`${review.name} before transformation`} 
                           className="object-cover w-full h-full hover:scale-105 transition-transform duration-500"
+                          loading="lazy" // Add lazy loading
                         />
                       </div>
                     </div>
                     <div className="flex flex-col">
-                      <div className="bg-green-600/10 p-2 rounded-t-lg">
-                        <p className="text-center text-gray-400 font-semibold">AFTER</p>
+                      <div className="bg-green-600/10 p-1 md:p-2 rounded-t-lg">
+                        <p className="text-center text-gray-400 font-semibold text-xs md:text-sm">AFTER</p>
                       </div>
                       <div className="aspect-w-3 aspect-h-4 overflow-hidden rounded-b-lg border border-gray-800">
                         <img 
                           src={review.afterImage} 
                           alt={`${review.name} after transformation`} 
                           className="object-cover w-full h-full hover:scale-105 transition-transform duration-500"
+                          loading="lazy" // Add lazy loading
                         />
                       </div>
                     </div>

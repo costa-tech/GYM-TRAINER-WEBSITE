@@ -38,13 +38,14 @@ const FloatingPackageButton = () => {
             to="/packages"
             aria-label="View packages"
             className="bg-red-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:bg-red-700 transition-colors group relative"
+            style={{ WebkitTapHighlightColor: 'transparent' }} // Fix for mobile tap highlight
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0v10l-8 4m-8-4V7m8 4v10M4 7l4-2m4-2l4 2m-8 6l4-2m4 2l4 2" />
             </svg>
             
-            {/* Tooltip */}
-            <span className="absolute -top-10 right-0 bg-black bg-opacity-80 text-white text-xs font-medium px-2.5 py-1 rounded whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            {/* Tooltip - Improved for mobile */}
+            <span className="absolute -top-10 right-0 bg-black bg-opacity-80 text-white text-xs font-medium px-2.5 py-1 rounded whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
               View Packages
             </span>
           </Link>

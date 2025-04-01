@@ -76,6 +76,29 @@ function App() {
 
   console.log(`App render - showSplash: ${showSplash}, contentReady: ${contentReady}`);
 
+  // Add code to ensure the mobile menu doesn't cause scrolling issues
+  useEffect(() => {
+    const handleBodyClass = () => {
+      // Check for open mobile menu
+      const mobileMenuOpen = document.querySelector('.md\\:hidden.fixed');
+      if (mobileMenuOpen) {
+        document.body.classList.add('menu-open');
+      } else {
+        document.body.classList.remove('menu-open');
+      }
+    };
+
+    // Observer to watch for DOM changes (menu opening/closing)
+    const observer = new MutationObserver(handleBodyClass);
+    observer.observe(document.body, { childList: true, subtree: true });
+
+    // Clean up observer
+    return () => {
+      observer.disconnect();
+      document.body.classList.remove('menu-open');
+    };
+  }, []);
+
   return (
     <Router>
       {showSplash ? (
