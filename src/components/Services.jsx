@@ -5,19 +5,9 @@ import { Link } from 'react-router-dom';
 
 const services = [
   {
-    title: "Boxing",
-    description: "Master the art of boxing with our expert trainers",
-    image: "https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-  },
-  {
     title: "Strength Training",
     description: "Build power and endurance with specialized programs",
     image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-  },
-  {
-    title: "HIIT Classes",
-    description: "High-intensity interval training for maximum results",
-    image: "https://images.unsplash.com/photo-1518611012118-696072aa579a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
   },
   {
     title: "Personal Training",
@@ -42,7 +32,7 @@ const Services = () => {
         >
           Our Programs
         </motion.h2>
-        <div ref={ref} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+        <div ref={ref} className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {services.map((service, index) => (
             <motion.div
               key={index}
