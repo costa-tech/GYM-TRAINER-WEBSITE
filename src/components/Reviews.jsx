@@ -14,11 +14,11 @@ const reviews = [
   },
   {
     name: "Sagara Lochana",
-    review: "The boxing classes are intense and amazing. The trainers really push you to your limits!",
+    review: "I never thought I could achieve this level of fitness. The trainers are knowledgeable and supportive.",
     rating: 5,
     program: "Personal Training",
-    beforeImage: "https://images.unsplash.com/photo-1609899659230-11de744e264a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    afterImage: "https://images.unsplash.com/photo-1609899495200-bc817d9a69bc?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+    beforeImage: "/images/sagarabefore.jpg",
+    afterImage: "public/images/sagaraafter.jpg",
     duration: "8 months"
   },
   {
