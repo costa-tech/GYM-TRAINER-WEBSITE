@@ -18,7 +18,7 @@ const reviews = [
     rating: 5,
     program: "Personal Training",
     beforeImage: "/images/sagarabefore.jpg",
-    afterImage: "public/images/sagaraafter.jpg",
+    afterImage: "/images/sagaraafter.jpg",
     duration: "4 months"
   },
   {
