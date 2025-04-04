@@ -10,7 +10,7 @@ const reviews = [
     program: "Personal Training",
     beforeImage: "/images/hirubefore.jpg",
     afterImage: "/images/hiruafter.jpg",
-    duration: "6 months"
+    duration: "5 months"
   },
   {
     name: "Sagara Lochana",
@@ -19,7 +19,7 @@ const reviews = [
     program: "Personal Training",
     beforeImage: "/images/sagarabefore.jpg",
     afterImage: "public/images/sagaraafter.jpg",
-    duration: "8 months"
+    duration: "4 months"
   },
   {
     name: "Tharindu Perera",
@@ -37,7 +37,7 @@ const reviews = [
     program: "Personal Training",
     beforeImage: "images/shaggybefore.jpg",
     afterImage: "/images/shaggyafter.jpg",
-    duration: "6 months"
+    duration: "3 months"
   }
 ];
 
