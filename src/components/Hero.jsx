@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
   return (
@@ -33,16 +34,32 @@ const Hero = () => {
           >
             Push your limits. Break barriers. Become unstoppable.
           </motion.p>
-          <motion.a
-            href="https://forms.gle/gDVEkGDr2ZNbAaGJ8"
-            target="_blank"
-            rel="noopener noreferrer"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="bg-red-600 text-white px-12 py-5 rounded-none text-lg font-bold uppercase tracking-wider hover:bg-red-700 transition duration-300 inline-block"
-          >
-            Start Training Now
-          </motion.a>
+          
+          {/* Hero buttons container */}
+          <div className="flex flex-col sm:flex-row justify-center gap-4">
+            <motion.a
+              href="https://forms.gle/gDVEkGDr2ZNbAaGJ8"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="bg-red-600 text-white px-8 py-4 rounded-none text-lg font-bold uppercase tracking-wider hover:bg-red-700 transition duration-300 inline-block"
+            >
+              Start Training Now
+            </motion.a>
+            
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <Link 
+                to="/packages" 
+                className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-none text-lg font-bold uppercase tracking-wider hover:bg-white hover:text-black transition duration-300 inline-block"
+              >
+                View Packages
+              </Link>
+            </motion.div>
+          </div>
         </div>
       </motion.div>
       <motion.div 
