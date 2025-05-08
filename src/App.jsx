@@ -12,6 +12,7 @@ import SplashScreen from './components/SplashScreen';
 import OnlineCoaching from './components/OnlineCoaching';
 import Packages from './components/Packages';
 import FloatingPackageButton from './components/FloatingPackageButton';
+import WelcomePopup from './components/WelcomePopup';
 
 // ScrollToTop component to handle scroll position on route change
 const ScrollToTop = () => {
@@ -127,6 +128,7 @@ function App() {
           </Routes>
           <Footer />
           <FloatingPackageButton />
+          <WelcomePopup />
         </motion.div>
       )}
     </Router>
