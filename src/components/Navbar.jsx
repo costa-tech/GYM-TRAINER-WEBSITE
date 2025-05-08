@@ -39,7 +39,11 @@ const Navbar = () => {
             animate={{ opacity: 1 }}
             className="text-2xl md:text-3xl font-black uppercase tracking-wider" // Smaller text on mobile
           >
-            <Link to="/" className="relative z-10">FitFuture</Link>
+            <Link to="/" className="relative z-10">
+              <span>Fit</span>
+              <span className="text-red-600">F</span>
+              <span>uture</span>
+            </Link>
           </motion.div>
 
           {/* Desktop Menu */}

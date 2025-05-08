@@ -7,7 +7,11 @@ const Footer = () => {
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           <div className="col-span-1 md:col-span-2">
-            <h3 className="text-3xl font-black uppercase tracking-wider mb-6">FitFuture</h3>
+            <h3 className="text-3xl font-black uppercase tracking-wider mb-6">
+              <span>Fit</span>
+              <span className="text-red-600">F</span>
+              <span>uture</span>
+            </h3>
             <p className="text-gray-400 mb-6">
               Join the elite. Train with the best. Transform your life with our world-class facilities and expert trainers.
             </p>
@@ -51,18 +55,11 @@ const Footer = () => {
           </div>
         </div>
         
-        {/* Costa Production Copyright Section */}
+        {/* Copyright Section - Removed Costa Production logo */}
         <div className="mt-8 pt-8 border-t border-gray-800 text-center">
-          <div className="flex flex-col items-center justify-center mb-4">
-            <img 
-              src="/images/costaproduction.png" 
-              alt="Costa Production Logo" 
-              className="h-20 mb-3"
-            />
-            <p className="text-gray-400">
-              &copy; {new Date().getFullYear()} COSTA PRODUCTION. All rights reserved.
-            </p>
-          </div>
+          <p className="text-gray-400">
+            &copy; {new Date().getFullYear()} FitFuture. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>
