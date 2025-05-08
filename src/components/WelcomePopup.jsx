@@ -22,14 +22,16 @@ const WelcomePopup = () => {
     }
   }, []);
   
-  const handleClick = () => {
-    // Close popup and navigate to packages page
+  const handleImageClick = () => {
+    // Navigate to packages page when the image is clicked
     setShowPopup(false);
     navigate('/packages');
   };
 
-  // Close popup without navigation (for the X button)
-  const closePopup = () => {
+  // Close popup without navigation - prevent event propagation
+  const closePopup = (e) => {
+    // Stop event from bubbling up to parent elements
+    e.stopPropagation();
     setShowPopup(false);
   };
 
@@ -47,9 +49,10 @@ const WelcomePopup = () => {
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.9, opacity: 0 }}
             transition={{ type: "spring", damping: 15 }}
-            className="relative w-full max-w-sm mx-auto rounded-lg overflow-hidden"
+            className="relative max-w-sm mx-auto rounded-lg overflow-hidden"
+            onClick={(e) => e.stopPropagation()} // Prevent clicks on container from triggering parent handlers
           >
-            {/* Close button - Updated for better visibility */}
+            {/* Close button - Updated for better click handling */}
             <button
               onClick={closePopup}
               className="absolute top-2 right-2 text-white bg-black bg-opacity-70 hover:bg-opacity-100 rounded-full w-8 h-8 flex items-center justify-center transition-colors z-10 shadow-md"
@@ -60,12 +63,12 @@ const WelcomePopup = () => {
               </svg>
             </button>
             
-            {/* Clickable graphic */}
+            {/* Clickable graphic - separate handler */}
             <motion.div
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               className="cursor-pointer"
-              onClick={handleClick}
+              onClick={handleImageClick} // Use separate handler for the image click
             >
               <img 
                 src="/images/popup.jpg" 
