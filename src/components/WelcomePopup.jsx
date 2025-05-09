@@ -71,7 +71,7 @@ const WelcomePopup = () => {
               onClick={handleImageClick} // Use separate handler for the image click
             >
               <img 
-                src="/images/popup.jpg" 
+                src="/images/popup.png" 
                 alt="View our special packages" 
                 className="w-full h-auto"
               />
