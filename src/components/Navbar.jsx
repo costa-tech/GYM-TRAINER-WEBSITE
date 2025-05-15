@@ -1,11 +1,31 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+
+// Helper function to smoothly scroll to an element by ID
+const scrollToElement = (elementId) => {
+  // Add a small delay to ensure the DOM is ready
+  setTimeout(() => {
+    const element = document.getElementById(elementId);
+    if (element) {
+      // For better cross-browser compatibility
+      const headerOffset = 80; // Adjust this based on your header height
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.scrollY - headerOffset;
+      
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  }, 100);
+};
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
   // Add useEffect to fix body scroll when menu is open
   useEffect(() => {
@@ -156,10 +176,8 @@ const NavLink = ({ to, children }) => {
     
     const handleClick = (e) => {
       e.preventDefault();
-      const element = document.getElementById(hash);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
+      scrollToElement(hash);
+      
       // Update URL without page reload
       window.history.pushState({}, '', to);
     };
@@ -214,6 +232,7 @@ const NavLink = ({ to, children }) => {
 // MobileNavLink component - Enhanced for better touch and smooth scroll handling
 const MobileNavLink = ({ to, children, onClick }) => {
   const location = useLocation();
+  const navigate = useNavigate();
   const isHashLink = to.includes('#');
   const [isActive, setIsActive] = useState(false);
   
@@ -240,15 +259,17 @@ const MobileNavLink = ({ to, children, onClick }) => {
         
         // If we're already on the correct page, scroll to element
         if (location.pathname === baseRoute || (baseRoute === '/' && location.pathname === '/')) {
-          const element = document.getElementById(hash);
-          if (element) {
-            element.scrollIntoView({ behavior: 'smooth' });
-            // Update URL without page reload
-            window.history.pushState({}, '', to);
-          }
+          scrollToElement(hash);
+          // Update URL without page reload
+          window.history.pushState({}, '', to);
         } else {
-          // If on a different page, navigate to the new page with the hash
-          window.location.href = to; // Force full navigation with hash
+          // If on a different page, navigate instead of forcing page reload
+          // Use state to indicate we want to scroll to a specific element after navigation
+          navigate(baseRoute, { 
+            state: { scrollToId: hash } 
+          });
+          
+          // No need for setTimeout here as we'll handle this in a useEffect in the App component
         }
       }, 300); // Slight delay to allow menu to close first
     };

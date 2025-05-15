@@ -16,28 +16,47 @@ import WelcomePopup from './components/WelcomePopup';
 
 // ScrollToTop component to handle scroll position on route change
 const ScrollToTop = () => {
-  const { pathname, hash } = useLocation();
+  const { pathname, hash, state } = useLocation();
+  
+  // Helper function for scrolling to elements with offset for fixed header
+  const smoothScrollToElement = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      // For better cross-browser compatibility
+      const headerOffset = 80; // Adjust based on your header height
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.scrollY - headerOffset;
+      
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    } else {
+      // If element not found, scroll to top
+      window.scrollTo(0, 0);
+    }
+  };
 
   useEffect(() => {
-    // Always scroll to top on route change
-    if (!hash) {
-      window.scrollTo(0, 0);
-    } 
-    // If there's a hash, scroll to the element with extra handling
-    else {
-      const id = hash.replace('#', '');
-      const element = document.getElementById(id);
-      if (element) {
-        // Add a slight delay to ensure proper scrolling
-        setTimeout(() => {
-          element.scrollIntoView({ behavior: 'smooth' });
-        }, 100);
-      } else {
-        // If hash element not found, scroll to top
-        window.scrollTo(0, 0);
-      }
+    // First check if we have a state with scrollToId (from our NavLink components)
+    if (state && state.scrollToId) {
+      // Small delay to ensure the page has rendered
+      setTimeout(() => {
+        smoothScrollToElement(state.scrollToId);
+      }, 300);
     }
-  }, [pathname, hash]); // Run this effect when location changes
+    // Otherwise use the hash if present
+    else if (hash) {
+      const id = hash.replace('#', '');
+      setTimeout(() => {
+        smoothScrollToElement(id);
+      }, 300);
+    }
+    // If no hash or scrollToId, scroll to top
+    else {
+      window.scrollTo(0, 0);
+    }
+  }, [pathname, hash, state]); // Run this effect when location changes
 
   return null;
 };
