@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Import additional CSS files */
+@import url('../src/css/mobile.css');
+
 /* Mobile-first responsive meta viewports */
 /* Ensure proper viewport settings to prevent zooming on iOS devices */
 @viewport {
@@ -32,6 +35,14 @@ body {
   position: relative;
 }
 
+/* Prevent body scrolling when mobile menu is open */
+body.menu-open {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+
 /* iOS input zoom issue fix */
 input, select, textarea {
   font-size: 16px;
@@ -40,6 +51,12 @@ input, select, textarea {
 /* Fix touch interactions on iOS */
 button, a {
   touch-action: manipulation;
+}
+
+/* Ensure touch events work properly on mobile */
+.mobile-nav-link {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  user-select: none;
 }
 
 /* Fix iOS scroll bouncing causing layout issues */

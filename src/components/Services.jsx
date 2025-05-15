@@ -23,7 +23,7 @@ const Services = () => {
   });
 
   return (
-    <section className="py-20 bg-black" id="services">
+    <section id="services" className="py-20 bg-gray-900">
       <div className="container mx-auto px-6">
         <motion.h2 
           initial={{ opacity: 0 }}

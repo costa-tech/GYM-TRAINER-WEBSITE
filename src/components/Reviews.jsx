@@ -58,7 +58,7 @@ const Reviews = () => {
   };
 
   return (
-    <section className="py-16 md:py-20 bg-gray-900" id="reviews"> {/* Adjusted padding for mobile */}
+    <section id="reviews" className="py-16 md:py-20 bg-gray-900"> {/* Adjusted padding for mobile */}
       <div className="container mx-auto px-4 md:px-6"> {/* Adjusted padding for mobile */}
         <motion.h2
           initial={{ opacity: 0 }}

@@ -100,6 +100,20 @@ function App() {
     };
   }, []);
 
+  // Handle initial hash navigation
+  useEffect(() => {
+    // Check if there's a hash in the URL on initial load
+    if (window.location.hash) {
+      const hash = window.location.hash.substring(1);
+      setTimeout(() => {
+        const element = document.getElementById(hash);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 1000); // Delay to ensure page has fully loaded
+    }
+  }, []);
+
   return (
     <Router>
       {showSplash ? (

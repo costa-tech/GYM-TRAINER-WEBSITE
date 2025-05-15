@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App'
 import './index.css'
+import './css/mobile.css' // Import mobile CSS directly
 
 // Function to ensure the app renders
 const renderApp = () => {

@@ -28,7 +28,7 @@ const teamMembers = [
 
 const Team = () => {
   return (
-    <section className="py-20 bg-gray-900" id="team">
+    <section id="team" className="py-20 bg-gray-800 relative overflow-hidden"> {/* Added ID to match the hash link */}
       <div className="container mx-auto px-6">
         <motion.h2 
           initial={{ opacity: 0 }}
