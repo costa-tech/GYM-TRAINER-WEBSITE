@@ -101,9 +101,9 @@ const packageCategories = [
       {
         name: "Complete Package",
         price: "LKR 5,000",
-        originalPrice: "LKR 6,000",
+        originalPrice: "LKR 6,500",
         period: "one-time",
-        discount: "Save LKR 1,000",
+        discount: "Save LKR 1,500",
         features: [
           "4-week workout program",
           "4-week meal plan",
