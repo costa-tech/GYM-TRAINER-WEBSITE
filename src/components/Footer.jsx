@@ -58,7 +58,7 @@ const Footer = () => {
         {/* Copyright Section - Removed Costa Production logo */}
         <div className="mt-8 pt-8 border-t border-gray-800 text-center">
           <p className="text-gray-400">
-            &copy; {new Date().getFullYear()} FitFuture. All rights reserved.
+            &copy; {new Date().getFullYear()} Ravindu Sandumith. All rights reserved.
           </p>
         </div>
       </div>
