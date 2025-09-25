@@ -13,8 +13,26 @@ const Footer = () => {
               <span>uture</span>
             </h3>
             <p className="text-gray-400 mb-6">
-              Join the elite. Train with the best. Transform your life with our world-class facilities and expert trainers.
+              Join the elite. Train with the best. Transform your life with our world-class facilities and expert trainers at Zeus Gymnasium & Rehabilitation.
             </p>
+          </div>
+          <div>
+            <h4 className="text-xl font-bold uppercase tracking-wider mb-6">Location</h4>
+            <p className="text-gray-400">
+              <span className="text-white font-semibold">Zeus Gymnasium & Rehabilitation</span><br />
+              Colombo, Sri Lanka
+            </p>
+            <a 
+              href="https://www.google.com/maps/place/zeus+gymnasium/@6.9019109,79.8599943,17z/data=!3m1!4b1!4m6!3m5!1s0x3ae25b50cbf9992d:0x815beddc983871a5!8m2!3d6.9019109!4d79.8625692!16s%2Fg%2F11c5l_y5xt?entry=ttu"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-red-600 hover:text-red-400 transition-colors inline-flex items-center mt-2"
+            >
+              <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd"></path>
+              </svg>
+              Get Directions
+            </a>
           </div>
           <div>
             <h4 className="text-xl font-bold uppercase tracking-wider mb-6">Hours</h4>
